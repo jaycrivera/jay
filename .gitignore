@@ -31,3 +31,5 @@ Desktop.ini
 
 # Node modules (if you ever use Node.js stuff)
 node_modules/
+style.css
+*.css
