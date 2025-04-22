@@ -1,1 +1,0 @@
-# jayrivera.github.io
