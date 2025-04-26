@@ -1,137 +1,138 @@
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Jay Rivera's Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="icon" type="image/x-icon" href="favicon.jpg">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		
-		<!-- Prism.js CSS for syntax highlighting -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jay Rivera | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0F0F0F;
+      color: #F1F1F1;
+      scroll-behavior: smooth;
+    }
 
-		<!-- Prism.js library -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: center;
+      padding: 1em;
+      z-index: 1000;
+    }
 
-		<!-- Include the language you need, e.g., Python -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
 
-	</head>
-	<body class="is-preload">
+    nav a:hover {
+      color: #1ABC9C;
+    }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    header {
+      height: 100vh;
+      background: linear-gradient(to right, #0F2027, #203A43, #2C5364);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-laptop-code"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Jay Rivera</h1>
-								<p>Data Science • Machine Learning</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#about">About</a></li>
-								<li><a href="#projects">Projects</a></li>
-								<li><a href="#contact">Contact</a></li>
-								<li><a href="resume.pdf">Resume</a></li>
-							</ul>
-						</nav>
-					</header>
+    header h1 {
+      font-size: 5em;
+      margin: 0;
+      font-weight: bold;
+    }
 
-				<!-- Main -->
-					<div id="main">
-             			 		<!-- About -->
-							<article id="about">
-								<h2 class="major">About Me!</h2>
-								<span class="image main"><img src="images/headshot.jpeg" alt="Jay Rivera Headshot" /></span>
-								<p>Thank you for visiting my portfolio! Here, you’ll find some of my favorite projects and the exciting work I’m currently diving into.</p>
-								<br>	
-								<p>I’m Jay Rivera, a Data Scientist with a passion for machine learning, data analytics, and model development. My focus is on using data to unlock actionable insights and craft impactful solutions, particularly in predictive modeling for customer behavior and personalized experiences. At the moment, I’m immersed in advanced machine learning projects, including developing models that help identify high-value customer personas from data.
-								I hold a degree in Computer Science, specializing in machine learning, and have developed strong expertise in Python and data visualization. I’m always seeking new ways to enhance model accuracy and scalability, staying on top of the latest advancements in the field. When I’m not immersed in data, I’m exploring the outdoors or experimenting with new recipes in the kitchen.</p>
-								<p>Feel free to connect with me on LinkedIn <a href="https://www.linkedin.com/in/jayrivera1994/" target="_blank">here!</a></p>
-							</article>
+    header p {
+      font-size: 1.5em;
+      color: #ddd;
+      margin-top: 10px;
+    }
 
-							<!-- Projects -->
-							<article id="projects">
-								<h1>Table and Summaries of Projects</h1>
-								<p>Below you can find some of my personal projects that I've completed off the clock; while each project is unique in tools and skills, my goal is always the same: challenge myself!</p>
-								<p>Each project has a report with results and figures, linked in both the table and the summary header! </p>
-								<p>Check out my <a href="https://github.com/jaycrivera" target="_blank">GitHub!</a></p>
+    section {
+      padding: 100px 20px 60px;
+      max-width: 800px;
+      margin: auto;
+    }
 
-								<!-- Project Table -->
-								<table>
-									<thead>
-										<tr>
-											<th>Project Name</th>
-											<th>Tools/Technologies</th>
-											<th>Description</th>
-											<th>Link</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Customer Persona Model</td>
-											<td>Python, Scikit-learn, Pandas, Matplotlib</td>
-											<td>A machine learning model to identify key customer personas from Salesforce data.</td>
-											<td><a href="https://github.com/jaycrivera/customer-persona-model" target="_blank">View on GitHub</a></td>
-										</tr>
-										<tr>
-											<td>Sales Analytics Dashboard</td>
-											<td>Python, Dash, Plotly</td>
-											<td>A Python-based dashboard for visualizing and analyzing sales data.</td>
-											<td><a href="https://github.com/jaycrivera/sales-analytics-dashboard" target="_blank">View on GitHub</a></td>
-										</tr>
-										<tr>
-											<td>Time Series Forecasting</td>
-											<td>Python, Statsmodels, Prophet</td>
-											<td>Developed a time series forecasting model for sales prediction.</td>
-											<td><a href="https://github.com/jaycrivera/time-series-forecasting" target="_blank">View on GitHub</a></td>
-										</tr>
-									</tbody>
-								</table>
+    h2 {
+      text-align: center;
+      color: #1ABC9C;
+      margin-bottom: 20px;
+      font-size: 2.5em;
+      font-weight: 600;
+    }
 
-								<!-- Individual Project Summaries -->
-								<section>
-									<h3>Customer Persona Model</h3>
-									<p>This project leverages machine learning techniques such as clustering and classification to identify high-value customer personas. The model helps businesses focus their marketing efforts on the most impactful customer segments.</p>
-									<a href="https://github.com/jaycrivera/customer-persona-model" target="_blank">View Project on GitHub</a>
-								</section>
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #ddd;
+      margin-bottom: 16px; /* Added margin for spacing between paragraphs */
+    }
 
-								<section>
-									<h3>Sales Analytics Dashboard</h3>
-									<p>Created a dynamic dashboard to visualize sales trends and key performance indicators (KPIs). The project showcases my ability to work with data visualization tools and create interactive user interfaces.</p>
-									<a href="https://github.com/jaycrivera/sales-analytics-dashboard" target="_blank">View Project on GitHub</a>
-								</section>
+    a {
+      color: #1ABC9C;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-								<section>
-									<h3>Time Series Forecasting</h3>
-									<p>Built a forecasting model using historical sales data to predict future trends. The project involved data preprocessing, exploratory analysis, and implementing ARIMA and Prophet models.</p>
-									<a href="https://github.com/jaycrivera/time-series-forecasting" target="_blank">View Project on GitHub</a>
-								</section>
-							</article>
+    footer {
+      text-align: center;
+      padding: 2em;
+      color: #888;
+      font-size: 1em;
+      background-color: #0F0F0F;
+    }
 
-							<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<p>If you'd like to get in touch, feel free to email me at <a href="mailto:jay.rivera1994@icloud.com">jay.rivera1994@icloud.com</a>.</p>
-							</article>
-						</div>
+    footer a {
+      color: #1ABC9C;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p>&copy; Jay Rivera. Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>. | <a href="mailto:jay.rivera1994@icloud.com">Contact me</a></p>
-					</footer>
-			</div>
-	</body>
+  <header>
+    <h1>Jay Rivera</h1>
+    <p>Software Licensing Specialist | ML Enthusiast | Builder</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Thank you for visiting my portfolio! Here, you’ll find some of my favorite projects and the exciting work I’m currently diving into.</p>
+    <p>I’m Jay Rivera, a Data Scientist with a passion for machine learning, data analytics, and model development. My focus is on using data to unlock actionable insights and craft impactful solutions, particularly in predictive modeling for customer behavior and personalized experiences. At the moment, I’m immersed in advanced machine learning projects, including developing models that help identify high-value customer personas from data.</p>
+    <p>I hold a degree in Computer Science, specializing in machine learning, and have developed strong expertise in Python and data visualization. I’m always seeking new ways to enhance model accuracy and scalability, staying on top of the latest advancements in the field.</p>
+    <p>When I’m not immersed in data, I’m exploring the outdoors or experimenting with new recipes in the kitchen.</p>
+    <p>Feel free to connect with me on <a href="https://www.linkedin.com/in/jayrivera1994/" target="_blank">LinkedIn</a>!</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Explore my projects below:</p>
+    <!-- Add project descriptions here -->
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>If you'd like to get in touch, feel free to email me at <a href="mailto:jay.rivera1994@icloud.com">jay.rivera1994@icloud.com</a>.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jay Rivera. All rights reserved. | <a href="mailto:jay.rivera1994@icloud.com">Contact me</a></p>
+  </footer>
+</body>
 </html>
