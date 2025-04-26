@@ -4,7 +4,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jay Rivera | Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0F0F0F;
+      color: #F1F1F1;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: center;
+      padding: 1em;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #1ABC9C;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(to right, #0F2027, #203A43, #2C5364);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 5em;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 1.5em;
+      color: #ddd;
+      margin-top: 10px;
+    }
+
+    section {
+      padding: 100px 20px 60px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1ABC9C;
+      margin-bottom: 20px;
+      font-size: 2.5em;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    a {
+      color: #1ABC9C;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em;
+      color: #888;
+      font-size: 1em;
+      background-color: #0F0F0F;
+    }
+
+    footer a {
+      color: #1ABC9C;
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -20,52 +112,21 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <img src="https://i.imgur.com/z21xahk.jpeg" alt="Jay Rivera" class="about-img">
-    <p id="about-text"></p>
+    <p>I'm Jay Rivera, a sales licensing specialist with a passion for machine learning, data analytics, and creating smart tools using cutting-edge technologies. I have hands-on experience with Python and data visualization, and I'm working on machine learning projects using real-world data to solve business challenges.</p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <div id="projects-container"></div>
+    <p>Currently, I'm building a machine learning model to identify key customer personas from Salesforce data. This project leverages advanced techniques such as classification and clustering to improve sales strategies and customer targeting.</p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p id="contact-text"></p>
+    <p>Feel free to reach out to me for collaborations or inquiries. You can email me at: <a href="mailto:jayrivera@example.com">jayrivera@example.com</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Jay Rivera. All rights reserved. | <a href="mailto:jay.rivera1994@icloud.com">Contact me</a></p>
+    <p>&copy; 2025 Jay Rivera. All rights reserved. | <a href="mailto:jayrivera@example.com">Contact me</a></p>
   </footer>
-
-  <script src="data.js"></script>
-  <script>
-    // Load and populate the data dynamically from the JSON file
-    fetch('data.json')
-      .then(response => response.json())
-      .then(data => {
-        // Populate About Section
-        document.getElementById('about-text').innerText = data.about.description;
-
-        // Populate Projects Section
-        const projectsContainer = document.getElementById('projects-container');
-        data.projects.forEach(project => {
-          const projectDiv = document.createElement('div');
-          projectDiv.classList.add('project');
-          projectDiv.innerHTML = `
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-            <a href="${project.link}" target="_blank">View Project</a>
-          `;
-          projectsContainer.appendChild(projectDiv);
-        });
-
-        // Populate Contact Section
-        document.getElementById('contact-text').innerHTML = `
-          Feel free to reach out to me for collaborations or inquiries. You can email me at: 
-          <a href="mailto:${data.contact.email}">${data.contact.email}</a>
-        `;
-      });
-  </script>
 </body>
 </html>
