@@ -8,8 +8,8 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #0f0f0f;
-      color: #f1f1f1;
+      background-color: #0F0F0F;
+      color: #F1F1F1;
       scroll-behavior: smooth;
     }
 
@@ -20,7 +20,6 @@
       background-color: rgba(0, 0, 0, 0.85);
       display: flex;
       justify-content: center;
-      gap: 2em;
       padding: 1em;
       z-index: 1000;
     }
@@ -29,32 +28,35 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+      margin: 0 15px;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #1abc9c;
+      color: #1ABC9C;
     }
 
     header {
       height: 100vh;
+      background: linear-gradient(to right, #0F2027, #203A43, #2C5364);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
       text-align: center;
       padding: 0 20px;
     }
 
     header h1 {
-      font-size: 4em;
+      font-size: 5em;
       margin: 0;
+      font-weight: bold;
     }
 
     header p {
       font-size: 1.5em;
-      color: #ccc;
+      color: #ddd;
+      margin-top: 10px;
     }
 
     section {
@@ -65,15 +67,34 @@
 
     h2 {
       text-align: center;
-      color: #1abc9c;
+      color: #1ABC9C;
       margin-bottom: 20px;
+      font-size: 2.5em;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    a {
+      color: #1ABC9C;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     footer {
       text-align: center;
       padding: 2em;
       color: #888;
-      font-size: 0.9em;
+      font-size: 1em;
+      background-color: #0F0F0F;
+    }
+
+    footer a {
+      color: #1ABC9C;
     }
   </style>
 </head>
@@ -91,21 +112,21 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I'm Jay Rivera, a sales licensing specialist with a passion for machine learning, data analytics, and creating smart tools using...</p>
+    <p>I'm Jay Rivera, a sales licensing specialist with a passion for machine learning, data analytics, and creating smart tools using cutting-edge technologies. I have hands-on experience with Python and data visualization, and I'm working on machine learning projects using real-world data to solve business challenges.</p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <p>Coming soon! Working on a machine learning project using Salesforce data to identify key customer personas.</p>
+    <p>Currently, I'm building a machine learning model to identify key customer personas from Salesforce data. This project leverages advanced techniques such as classification and clustering to improve sales strategies and customer targeting.</p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>You can reach me at: <a href="mailto:jayrivera@example.com" style="color: #1abc9c;">jayrivera@example.com</a></p>
+    <p>Feel free to reach out to me for collaborations or inquiries. You can email me at: <a href="mailto:jayrivera@example.com">jayrivera@example.com</a></p>
   </section>
 
   <footer>
-    &copy; 2025 Jay Rivera. All rights reserved.
+    <p>&copy; 2025 Jay Rivera. All rights reserved. | <a href="mailto:jayrivera@example.com">Contact me</a></p>
   </footer>
 </body>
 </html>
