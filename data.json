@@ -1,0 +1,20 @@
+{
+  "about": {
+    "description": "Thank you for visiting my portfolio! Here, you’ll find some of my favorite projects and the exciting work I’m currently diving into. I’m Jay Rivera, a Data Scientist with a passion for machine learning, data analytics, and model development."
+  },
+  "projects": [
+    {
+      "title": "Customer Persona Model",
+      "description": "A machine learning model to identify key customer personas from Salesforce data, leveraging classification and clustering techniques.",
+      "link": "https://example.com/project1"
+    },
+    {
+      "title": "Sales Analytics Dashboard",
+      "description": "A Python-based dashboard for visualizing and analyzing sales data to improve decision-making.",
+      "link": "https://example.com/project2"
+    }
+  ],
+  "contact": {
+    "email": "jayrivera@example.com"
+  }
+}
