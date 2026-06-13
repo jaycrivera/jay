@@ -86,8 +86,7 @@
     }
     .hero-glow {
       position: absolute;
-      width: 600px;
-      height: 600px;
+      width: 600px; height: 600px;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%);
       top: 10%; right: 5%;
@@ -95,8 +94,7 @@
     }
     .hero-glow2 {
       position: absolute;
-      width: 400px;
-      height: 400px;
+      width: 400px; height: 400px;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(52,211,153,0.05) 0%, transparent 70%);
       bottom: 15%; left: 0%;
@@ -230,7 +228,6 @@
     }
     .section-desc { color: var(--muted); font-size: 1rem; margin-bottom: 3rem; max-width: 560px; }
 
-    /* ABOUT */
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
     .about-photo {
       width: 100%;
@@ -260,7 +257,6 @@
     .skill-chip.ai { border-color: rgba(99,102,241,0.3); color: var(--accent2); background: rgba(99,102,241,0.06); }
     .skill-chip.green { border-color: rgba(52,211,153,0.3); color: var(--accent3); background: rgba(52,211,153,0.06); }
 
-    /* EXPERIENCE - photo banner on top, content below */
     .exp-list { display: flex; flex-direction: column; gap: 2.5rem; }
     .exp-card {
       background: var(--card);
@@ -296,6 +292,8 @@
       transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       will-change: transform;
     }
+
+    /* Default: center center for group/event shots */
     .slider-track img {
       flex-shrink: 0;
       width: 100%;
@@ -305,12 +303,16 @@
       display: block;
     }
 
+    /* Force top for sliders where faces are at the top */
+    .exp-slider.faces-top .slider-track img {
+      object-position: center top;
+    }
+
     .slider-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 38px;
-      height: 38px;
+      width: 38px; height: 38px;
       border-radius: 50%;
       background: rgba(8,8,16,0.8);
       border: 1px solid rgba(255,255,255,0.15);
@@ -338,8 +340,7 @@
       z-index: 4;
     }
     .slider-dot {
-      width: 6px;
-      height: 6px;
+      width: 6px; height: 6px;
       border-radius: 50%;
       background: rgba(255,255,255,0.35);
       cursor: pointer;
@@ -349,8 +350,7 @@
 
     .slider-counter {
       position: absolute;
-      top: 14px;
-      right: 14px;
+      top: 14px; right: 14px;
       font-size: 0.7rem;
       color: rgba(255,255,255,0.85);
       background: rgba(8,8,16,0.65);
@@ -406,10 +406,8 @@
     .exp-bullets li::before {
       content: '';
       position: absolute;
-      left: 0;
-      top: 0.6em;
-      width: 5px;
-      height: 5px;
+      left: 0; top: 0.6em;
+      width: 5px; height: 5px;
       border-radius: 50%;
       background: var(--accent);
     }
@@ -419,7 +417,6 @@
     .exit-reason { font-size: 0.75rem; color: var(--muted2); font-style: italic; }
     .exit-reason span { color: var(--accent3); font-style: normal; font-weight: 500; }
 
-    /* PROJECTS */
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
     .project-card {
       background: var(--card);
@@ -444,7 +441,6 @@
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .project-tag { font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 100px; background: var(--bg3); border: 1px solid var(--border); color: var(--muted2); }
 
-    /* CONTACT */
     .contact-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -586,12 +582,12 @@
 
     <div class="exp-list">
 
-      <!-- AI RUDDER - photos: 34.jpg to 39.jpg -->
+      <!-- AI RUDDER: 35.jpg first, then 34, 36, 37, 38, 39 -->
       <div class="exp-card">
         <div class="exp-slider" data-slider>
           <div class="slider-track">
-            <img src="34.jpg" alt="AI Rudder photo 1">
-            <img src="35.jpg" alt="AI Rudder photo 2">
+            <img src="35.jpg" alt="AI Rudder photo 1">
+            <img src="34.jpg" alt="AI Rudder photo 2">
             <img src="36.jpg" alt="AI Rudder photo 3">
             <img src="37.jpg" alt="AI Rudder photo 4">
             <img src="38.jpg" alt="AI Rudder photo 5">
@@ -622,9 +618,9 @@
         </div>
       </div>
 
-      <!-- 2X - photo: 32.jpg -->
+      <!-- 2X: faces-top class forces object-position center top to show faces -->
       <div class="exp-card">
-        <div class="exp-slider green" data-slider>
+        <div class="exp-slider green faces-top" data-slider>
           <div class="slider-track">
             <img src="32.jpg" alt="2X photo 1">
           </div>
@@ -654,7 +650,7 @@
         </div>
       </div>
 
-      <!-- ELABOR8 - photos: 29-31, 11, 13-31 -->
+      <!-- ELABOR8: 29-31, 11, 13-28 -->
       <div class="exp-card">
         <div class="exp-slider purple" data-slider>
           <div class="slider-track">
@@ -705,7 +701,7 @@
         </div>
       </div>
 
-      <!-- SMILE.IO - photos: 6.jpg to 9.jpg -->
+      <!-- SMILE.IO: 6-9 -->
       <div class="exp-card">
         <div class="exp-slider" data-slider>
           <div class="slider-track">
@@ -739,7 +735,7 @@
         </div>
       </div>
 
-      <!-- T-MOBILE - photos: 1.jpg to 5.jpg -->
+      <!-- T-MOBILE: 1-5 -->
       <div class="exp-card">
         <div class="exp-slider" data-slider>
           <div class="slider-track">
