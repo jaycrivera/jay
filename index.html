@@ -285,22 +285,6 @@
       position: relative;
       overflow: hidden;
     }
-    .about-photo-placeholder::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(99,102,241,0.03) 0%, transparent 50%);
-    }
-    .photo-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      border: 1px dashed var(--muted2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-    }
     .about-text p {
       color: var(--muted);
       margin-bottom: 1.25rem;
@@ -341,31 +325,20 @@
       overflow: hidden;
       transition: border-color 0.3s, transform 0.2s;
     }
-    .exp-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-2px);
-    }
+    .exp-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
     .exp-card-inner {
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 300px 1fr;
     }
-    .exp-photo {
-      aspect-ratio: 4/5;
-      background: var(--bg3);
-      border-right: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      color: var(--muted2);
-      font-size: 0.8rem;
-      text-align: center;
-      padding: 1rem;
+
+    .exp-slider {
       position: relative;
+      border-right: 1px solid var(--border);
       overflow: hidden;
+      background: var(--bg3);
+      aspect-ratio: 4/5;
     }
-    .exp-photo::after {
+    .exp-slider::after {
       content: '';
       position: absolute;
       bottom: 0;
@@ -373,25 +346,86 @@
       right: 0;
       height: 3px;
       background: var(--accent);
+      z-index: 3;
     }
-    .exp-photo.green::after { background: var(--accent3); }
-    .exp-photo.purple::after { background: var(--accent2); }
-    .exp-photo-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      border: 1px dashed var(--muted2);
+    .exp-slider.green::after { background: var(--accent3); }
+    .exp-slider.purple::after { background: var(--accent2); }
+
+    .slider-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.4s ease;
+    }
+    .slider-track img {
+      min-width: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(8,8,16,0.75);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 0.85rem;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
-      margin-bottom: 0.25rem;
+      z-index: 4;
+      transition: background 0.2s, border-color 0.2s;
+      backdrop-filter: blur(6px);
     }
-    .exp-photo small {
+    .slider-btn:hover {
+      background: rgba(99,102,241,0.6);
+      border-color: var(--accent);
+    }
+    .slider-btn.prev { left: 8px; }
+    .slider-btn.next { right: 8px; }
+
+    .slider-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+      z-index: 4;
+    }
+    .slider-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .slider-dot.active {
+      background: #fff;
+      transform: scale(1.3);
+    }
+
+    .slider-counter {
+      position: absolute;
+      top: 10px;
+      right: 10px;
       font-size: 0.7rem;
-      color: var(--muted2);
-      line-height: 1.4;
+      color: rgba(255,255,255,0.7);
+      background: rgba(8,8,16,0.6);
+      backdrop-filter: blur(6px);
+      padding: 3px 8px;
+      border-radius: 100px;
+      z-index: 4;
+      font-family: 'Space Grotesk', sans-serif;
     }
+
     .exp-content { padding: 2rem 2.5rem; }
     .exp-meta {
       display: flex;
@@ -472,9 +506,6 @@
       margin-top: 1.5rem;
       padding-top: 1rem;
       border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
     }
     .exit-reason {
       font-size: 0.75rem;
@@ -499,10 +530,7 @@
       padding: 1.75rem;
       transition: border-color 0.3s, transform 0.2s;
     }
-    .project-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-2px);
-    }
+    .project-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
     .project-icon {
       width: 40px;
       height: 40px;
@@ -532,11 +560,7 @@
       line-height: 1.7;
       margin-bottom: 1rem;
     }
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .project-tag {
       font-size: 0.7rem;
       padding: 0.2rem 0.6rem;
@@ -599,7 +623,7 @@
       .stats-bar { grid-template-columns: repeat(2, 1fr); }
       .about-grid { grid-template-columns: 1fr; }
       .exp-card-inner { grid-template-columns: 1fr; }
-      .exp-photo { aspect-ratio: 16/6; }
+      .exp-slider { aspect-ratio: 16/7; border-right: none; border-bottom: 1px solid var(--border); }
       section { padding: 4rem 6vw; }
       header { padding: 0 6vw; }
       .contact-card { padding: 2.5rem 1.5rem; }
@@ -661,15 +685,13 @@
     </div>
   </div>
 
-<section id="about">
+  <section id="about">
     <div class="section-eyebrow">Who I am</div>
     <h2>Builder. Analyst. AI Enabler.</h2>
     <p class="section-desc">I sit at the intersection of marketing strategy, sales operations, and applied AI.</p>
     <div class="about-grid">
-      <div class="about-photo-placeholder">
-        <div class="photo-icon">📷</div>
-        <span style="font-weight:500; color: var(--muted);">Your photo here</span>
-        <small style="color: var(--muted2);">Replace with: &lt;img src="assets/jay.jpg"&gt;</small>
+      <div class="about-photo-placeholder" style="padding:0; border:none;">
+        <img src="assets/photos/jay.jpg" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
       </div>
       <div class="about-text">
         <p>I'm <strong>Jay Rivera</strong>, a Senior Marketing Manager based in the Philippines with over a decade of experience across BFSI field marketing, AI-powered operations, and revenue-driven sales enablement across Southeast Asia.</p>
@@ -702,12 +724,20 @@
 
     <div class="exp-list">
 
+      <!-- AI RUDDER -->
+      <!-- To add more photos: copy and paste more <img> lines inside slider-track -->
       <div class="exp-card">
         <div class="exp-card-inner">
-          <div class="exp-photo">
-            <div class="exp-photo-icon">📷</div>
-            <strong style="font-size:0.8rem; color: var(--muted);">Event / work photo</strong>
-            <small>Replace with: &lt;img src="assets/ai-rudder.jpg"&gt;</small>
+          <div class="exp-slider" data-slider>
+            <div class="slider-track">
+              <img src="assets/photos/ai-rudder-1.jpg" alt="AI Rudder photo 1">
+              <img src="assets/photos/ai-rudder-2.jpg" alt="AI Rudder photo 2">
+              <img src="assets/photos/ai-rudder-3.jpg" alt="AI Rudder photo 3">
+            </div>
+            <button class="slider-btn prev" onclick="slide(this,-1)">&#8249;</button>
+            <button class="slider-btn next" onclick="slide(this,1)">&#8250;</button>
+            <div class="slider-dots"></div>
+            <div class="slider-counter"></div>
           </div>
           <div class="exp-content">
             <div class="exp-meta">
@@ -730,12 +760,20 @@
         </div>
       </div>
 
+      <!-- 2X -->
+      <!-- To add more photos: copy and paste more <img> lines inside slider-track -->
       <div class="exp-card">
         <div class="exp-card-inner">
-          <div class="exp-photo green">
-            <div class="exp-photo-icon">📷</div>
-            <strong style="font-size:0.8rem; color: var(--muted);">Team / workshop photo</strong>
-            <small>Replace with: &lt;img src="assets/2x.jpg"&gt;</small>
+          <div class="exp-slider green" data-slider>
+            <div class="slider-track">
+              <img src="assets/photos/2x-1.jpg" alt="2X photo 1">
+              <img src="assets/photos/2x-2.jpg" alt="2X photo 2">
+              <img src="assets/photos/2x-3.jpg" alt="2X photo 3">
+            </div>
+            <button class="slider-btn prev" onclick="slide(this,-1)">&#8249;</button>
+            <button class="slider-btn next" onclick="slide(this,1)">&#8250;</button>
+            <div class="slider-dots"></div>
+            <div class="slider-counter"></div>
           </div>
           <div class="exp-content">
             <div class="exp-meta">
@@ -759,12 +797,20 @@
         </div>
       </div>
 
+      <!-- ELABOR8 -->
+      <!-- To add more photos: copy and paste more <img> lines inside slider-track -->
       <div class="exp-card">
         <div class="exp-card-inner">
-          <div class="exp-photo purple">
-            <div class="exp-photo-icon">📷</div>
-            <strong style="font-size:0.8rem; color: var(--muted);">Event / team photo</strong>
-            <small>Replace with: &lt;img src="assets/elabor8.jpg"&gt;</small>
+          <div class="exp-slider purple" data-slider>
+            <div class="slider-track">
+              <img src="assets/photos/elabor8-1.jpg" alt="Elabor8 photo 1">
+              <img src="assets/photos/elabor8-2.jpg" alt="Elabor8 photo 2">
+              <img src="assets/photos/elabor8-3.jpg" alt="Elabor8 photo 3">
+            </div>
+            <button class="slider-btn prev" onclick="slide(this,-1)">&#8249;</button>
+            <button class="slider-btn next" onclick="slide(this,1)">&#8250;</button>
+            <div class="slider-dots"></div>
+            <div class="slider-counter"></div>
           </div>
           <div class="exp-content">
             <div class="exp-meta">
@@ -789,12 +835,20 @@
         </div>
       </div>
 
+      <!-- SMILE.IO -->
+      <!-- To add more photos: copy and paste more <img> lines inside slider-track -->
       <div class="exp-card">
         <div class="exp-card-inner">
-          <div class="exp-photo">
-            <div class="exp-photo-icon">📷</div>
-            <strong style="font-size:0.8rem; color: var(--muted);">Team photo</strong>
-            <small>Replace with: &lt;img src="assets/smileio.jpg"&gt;</small>
+          <div class="exp-slider" data-slider>
+            <div class="slider-track">
+              <img src="assets/photos/smileio-1.jpg" alt="Smile.io photo 1">
+              <img src="assets/photos/smileio-2.jpg" alt="Smile.io photo 2">
+              <img src="assets/photos/smileio-3.jpg" alt="Smile.io photo 3">
+            </div>
+            <button class="slider-btn prev" onclick="slide(this,-1)">&#8249;</button>
+            <button class="slider-btn next" onclick="slide(this,1)">&#8250;</button>
+            <div class="slider-dots"></div>
+            <div class="slider-counter"></div>
           </div>
           <div class="exp-content">
             <div class="exp-meta">
@@ -817,12 +871,20 @@
         </div>
       </div>
 
+      <!-- T-MOBILE -->
+      <!-- To add more photos: copy and paste more <img> lines inside slider-track -->
       <div class="exp-card">
         <div class="exp-card-inner">
-          <div class="exp-photo">
-            <div class="exp-photo-icon">📷</div>
-            <strong style="font-size:0.8rem; color: var(--muted);">Work photo</strong>
-            <small>Replace with: &lt;img src="assets/tmobile.jpg"&gt;</small>
+          <div class="exp-slider" data-slider>
+            <div class="slider-track">
+              <img src="assets/photos/tmobile-1.jpg" alt="T-Mobile photo 1">
+              <img src="assets/photos/tmobile-2.jpg" alt="T-Mobile photo 2">
+              <img src="assets/photos/tmobile-3.jpg" alt="T-Mobile photo 3">
+            </div>
+            <button class="slider-btn prev" onclick="slide(this,-1)">&#8249;</button>
+            <button class="slider-btn next" onclick="slide(this,1)">&#8250;</button>
+            <div class="slider-dots"></div>
+            <div class="slider-counter"></div>
           </div>
           <div class="exp-content">
             <div class="exp-meta">
@@ -936,6 +998,56 @@
     <span>Jay Rivera &copy; 2026</span>
     <span>Built for GitHub Pages &nbsp;·&nbsp; <a href="mailto:jay.rivera1994@icloud.com">jay.rivera1994@icloud.com</a></span>
   </footer>
+
+  <script>
+    function initSlider(slider) {
+      const track = slider.querySelector('.slider-track');
+      const images = track.querySelectorAll('img');
+      const dotsContainer = slider.querySelector('.slider-dots');
+      const counter = slider.querySelector('.slider-counter');
+      const total = images.length;
+      let current = 0;
+
+      if (total <= 1) {
+        slider.querySelector('.slider-btn.prev').style.display = 'none';
+        slider.querySelector('.slider-btn.next').style.display = 'none';
+      }
+
+      dotsContainer.innerHTML = '';
+      images.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+        dot.onclick = () => goTo(i);
+        dotsContainer.appendChild(dot);
+      });
+
+      function update() {
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dotsContainer.querySelectorAll('.slider-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === current);
+        });
+        counter.textContent = (current + 1) + ' / ' + total;
+      }
+
+      function goTo(index) {
+        current = (index + total) % total;
+        update();
+      }
+
+      slider._goTo = goTo;
+      slider._getCurrent = () => current;
+      slider._getTotal = () => total;
+      update();
+    }
+
+    function slide(btn, dir) {
+      const slider = btn.closest('[data-slider]');
+      const current = slider._getCurrent();
+      slider._goTo(current + dir);
+    }
+
+    document.querySelectorAll('[data-slider]').forEach(initSlider);
+  </script>
 
 </body>
 </html>
