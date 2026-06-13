@@ -285,6 +285,16 @@
       position: relative;
       overflow: hidden;
     }
+    .photo-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px dashed var(--muted2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
     .about-text p {
       color: var(--muted);
       margin-bottom: 1.25rem;
@@ -690,8 +700,10 @@
     <h2>Builder. Analyst. AI Enabler.</h2>
     <p class="section-desc">I sit at the intersection of marketing strategy, sales operations, and applied AI.</p>
     <div class="about-grid">
-      <div class="about-photo-placeholder" style="padding:0; border:none;">
-        <img src="assets/photos/jay.jpg" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+      <div class="about-photo-placeholder">
+        <div class="photo-icon">📷</div>
+        <span style="font-weight:500; color: var(--muted);">Your photo here</span>
+        <small style="color: var(--muted2);">Upload your photo and update the src</small>
       </div>
       <div class="about-text">
         <p>I'm <strong>Jay Rivera</strong>, a Senior Marketing Manager based in the Philippines with over a decade of experience across BFSI field marketing, AI-powered operations, and revenue-driven sales enablement across Southeast Asia.</p>
@@ -724,15 +736,15 @@
 
     <div class="exp-list">
 
-      <!-- AI RUDDER -->
-      <!-- To add more photos: copy and paste more <img> lines inside slider-track -->
+      <!-- AI RUDDER - placeholder until photos are ready -->
       <div class="exp-card">
         <div class="exp-card-inner">
           <div class="exp-slider" data-slider>
             <div class="slider-track">
-              <img src="assets/photos/ai-rudder-1.jpg" alt="AI Rudder photo 1">
-              <img src="assets/photos/ai-rudder-2.jpg" alt="AI Rudder photo 2">
-              <img src="assets/photos/ai-rudder-3.jpg" alt="AI Rudder photo 3">
+              <div style="min-width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.5rem; color:var(--muted2);">
+                <span style="font-size:2rem;">📷</span>
+                <span style="font-size:0.8rem;">Photos coming soon</span>
+              </div>
             </div>
             <button class="slider-btn prev" onclick="slide(this,-1)">&#8249;</button>
             <button class="slider-btn next" onclick="slide(this,1)">&#8250;</button>
@@ -760,15 +772,12 @@
         </div>
       </div>
 
-      <!-- 2X -->
-      <!-- To add more photos: copy and paste more <img> lines inside slider-track -->
+      <!-- 2X - photo: 32.jpg -->
       <div class="exp-card">
         <div class="exp-card-inner">
           <div class="exp-slider green" data-slider>
             <div class="slider-track">
-              <img src="assets/photos/2x-1.jpg" alt="2X photo 1">
-              <img src="assets/photos/2x-2.jpg" alt="2X photo 2">
-              <img src="assets/photos/2x-3.jpg" alt="2X photo 3">
+              <img src="32.jpg" alt="2X photo 1">
             </div>
             <button class="slider-btn prev" onclick="slide(this,-1)">&#8249;</button>
             <button class="slider-btn next" onclick="slide(this,1)">&#8250;</button>
@@ -797,15 +806,33 @@
         </div>
       </div>
 
-      <!-- ELABOR8 -->
-      <!-- To add more photos: copy and paste more <img> lines inside slider-track -->
+      <!-- ELABOR8 - photos: 10.jpg to 31.jpg -->
       <div class="exp-card">
         <div class="exp-card-inner">
           <div class="exp-slider purple" data-slider>
             <div class="slider-track">
-              <img src="assets/photos/elabor8-1.jpg" alt="Elabor8 photo 1">
-              <img src="assets/photos/elabor8-2.jpg" alt="Elabor8 photo 2">
-              <img src="assets/photos/elabor8-3.jpg" alt="Elabor8 photo 3">
+              <img src="10.jpg" alt="Elabor8 photo 1">
+              <img src="11.jpg" alt="Elabor8 photo 2">
+              <img src="12.jpg" alt="Elabor8 photo 3">
+              <img src="13.jpg" alt="Elabor8 photo 4">
+              <img src="14.jpg" alt="Elabor8 photo 5">
+              <img src="15.jpg" alt="Elabor8 photo 6">
+              <img src="16.jpg" alt="Elabor8 photo 7">
+              <img src="17.jpg" alt="Elabor8 photo 8">
+              <img src="18.jpg" alt="Elabor8 photo 9">
+              <img src="19.jpg" alt="Elabor8 photo 10">
+              <img src="20.jpg" alt="Elabor8 photo 11">
+              <img src="21.jpg" alt="Elabor8 photo 12">
+              <img src="22.jpg" alt="Elabor8 photo 13">
+              <img src="23.jpg" alt="Elabor8 photo 14">
+              <img src="24.jpg" alt="Elabor8 photo 15">
+              <img src="25.jpg" alt="Elabor8 photo 16">
+              <img src="26.jpg" alt="Elabor8 photo 17">
+              <img src="27.jpg" alt="Elabor8 photo 18">
+              <img src="28.jpg" alt="Elabor8 photo 19">
+              <img src="29.jpg" alt="Elabor8 photo 20">
+              <img src="30.jpg" alt="Elabor8 photo 21">
+              <img src="31.jpg" alt="Elabor8 photo 22">
             </div>
             <button class="slider-btn prev" onclick="slide(this,-1)">&#8249;</button>
             <button class="slider-btn next" onclick="slide(this,1)">&#8250;</button>
@@ -835,15 +862,15 @@
         </div>
       </div>
 
-      <!-- SMILE.IO -->
-      <!-- To add more photos: copy and paste more <img> lines inside slider-track -->
+      <!-- SMILE.IO - photos: 6.jpg to 9.jpg -->
       <div class="exp-card">
         <div class="exp-card-inner">
           <div class="exp-slider" data-slider>
             <div class="slider-track">
-              <img src="assets/photos/smileio-1.jpg" alt="Smile.io photo 1">
-              <img src="assets/photos/smileio-2.jpg" alt="Smile.io photo 2">
-              <img src="assets/photos/smileio-3.jpg" alt="Smile.io photo 3">
+              <img src="6.jpg" alt="Smile.io photo 1">
+              <img src="7.jpg" alt="Smile.io photo 2">
+              <img src="8.jpg" alt="Smile.io photo 3">
+              <img src="9.jpg" alt="Smile.io photo 4">
             </div>
             <button class="slider-btn prev" onclick="slide(this,-1)">&#8249;</button>
             <button class="slider-btn next" onclick="slide(this,1)">&#8250;</button>
@@ -871,15 +898,16 @@
         </div>
       </div>
 
-      <!-- T-MOBILE -->
-      <!-- To add more photos: copy and paste more <img> lines inside slider-track -->
+      <!-- T-MOBILE - photos: 1.jpg to 5.jpg -->
       <div class="exp-card">
         <div class="exp-card-inner">
           <div class="exp-slider" data-slider>
             <div class="slider-track">
-              <img src="assets/photos/tmobile-1.jpg" alt="T-Mobile photo 1">
-              <img src="assets/photos/tmobile-2.jpg" alt="T-Mobile photo 2">
-              <img src="assets/photos/tmobile-3.jpg" alt="T-Mobile photo 3">
+              <img src="1.jpg" alt="T-Mobile photo 1">
+              <img src="2.jpg" alt="T-Mobile photo 2">
+              <img src="3.jpg" alt="T-Mobile photo 3">
+              <img src="4.jpg" alt="T-Mobile photo 4">
+              <img src="5.jpg" alt="T-Mobile photo 5">
             </div>
             <button class="slider-btn prev" onclick="slide(this,-1)">&#8249;</button>
             <button class="slider-btn next" onclick="slide(this,1)">&#8250;</button>
